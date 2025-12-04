@@ -158,8 +158,8 @@ export class ExperienceCommand implements Command {
         title: section.title,
         company: metadata.company,
         location: metadata.location || "Remote",
-        startDate: section.startDate || new Date(),
-        endDate: section.endDate || null,
+        startDate: section.startDate ? new Date(section.startDate) : new Date(),
+        endDate: section.endDate ? new Date(section.endDate) : null,
         description: section.description,
         technologies: metadata.technologies,
       };
