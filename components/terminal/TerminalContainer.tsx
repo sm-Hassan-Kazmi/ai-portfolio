@@ -266,7 +266,7 @@ export default function TerminalContainer({
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
-          className="flex-1 bg-transparent outline-none text-[var(--color-terminal-text)] caret-transparent text-sm sm:text-base py-2 sm:py-0 min-h-[44px] sm:min-h-0"
+          className="flex-1 bg-transparent outline-none border-none text-[var(--color-terminal-text)] caret-transparent text-sm sm:text-base py-2 sm:py-0 min-h-[44px] sm:min-h-0 focus:outline-none focus:border-none focus:ring-0"
           autoComplete="off"
           spellCheck={false}
           aria-label="Terminal command input. Press Tab for autocomplete, Up and Down arrows for command history"
