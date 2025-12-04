@@ -58,6 +58,19 @@ Hassan's Terminal Portfolio is a dual-mode portfolio website featuring a primary
 4. WHEN a visitor types "history" THEN the Portfolio System SHALL display all previously executed commands in the current session
 5. WHEN a visitor types "stats" THEN the Portfolio System SHALL display aggregate statistics including project count and skill count
 
+### Requirement 3A: Social Media Links and Greetings
+
+**User Story:** As a visitor, I want to access Hassan's social media profiles and interact with friendly greeting commands, so that I can connect on other platforms and have a personalized experience.
+
+#### Acceptance Criteria
+
+1. WHEN a visitor types "github" THEN the Portfolio System SHALL open Hassan's GitHub profile in a new browser tab
+2. WHEN a visitor types "linkedin" THEN the Portfolio System SHALL open Hassan's LinkedIn profile in a new browser tab
+3. WHEN a visitor types "instagram" or "insta" THEN the Portfolio System SHALL open Hassan's Instagram profile in a new browser tab
+4. WHEN a visitor types "hello" THEN the Portfolio System SHALL display the message "heyyyy! How can i help"
+5. WHEN a visitor types "bye" THEN the Portfolio System SHALL display the message "byeeee"
+6. WHEN a visitor types "maki-zenin" THEN the Portfolio System SHALL display the message "heyyyy shorty"
+
 ### Requirement 4: GUI Mode
 
 **User Story:** As a visitor, I want to switch to a visual gamified interface, so that I can explore the portfolio through an alternative interactive experience.

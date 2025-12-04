@@ -32,6 +32,13 @@ Available Commands:
   theme [name]            Change terminal theme (default, cyberpunk, matrix, dracula)
   gui                     Switch to GUI mode
 
+Social & Fun:
+  github                  Open GitHub profile
+  linkedin                Open LinkedIn profile
+  instagram, insta        Open Instagram profile
+  hello                   Say hello!
+  bye                     Say goodbye!
+
 Tips:
   - Use Tab for command autocomplete
   - Use Up/Down arrows to navigate command history

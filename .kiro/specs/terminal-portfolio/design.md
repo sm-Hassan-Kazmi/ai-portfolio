@@ -157,6 +157,12 @@ Commands to implement:
 - `ThemeCommand`: Change terminal theme
 - `StatsCommand`: Display portfolio statistics
 - `GuiCommand`: Switch to GUI mode
+- `GithubCommand`: Open GitHub profile
+- `LinkedInCommand`: Open LinkedIn profile
+- `InstagramCommand`: Open Instagram profile (aliases: insta)
+- `HelloCommand`: Display greeting message
+- `ByeCommand`: Display farewell message
+- `MakiZeninCommand`: Display easter egg message
 
 ### 2. GUI Mode Components
 
@@ -767,6 +773,16 @@ _For any_ image element rendered by the system, the alt attribute should be pres
 
 _For any_ image served by the portfolio, it should be rendered using the Next.js Image component with automatic format optimization.
 **Validates: Requirements 12.4**
+
+### Property 41: Social media link commands
+
+_For any_ social media command (github, linkedin, instagram), executing the command should open the correct profile URL in a new browser tab.
+**Validates: Requirements 3A.1, 3A.2, 3A.3**
+
+### Property 42: Greeting command responses
+
+_For any_ greeting command (hello, bye, maki-zenin), executing the command should display the exact expected message.
+**Validates: Requirements 3A.4, 3A.5, 3A.6**
 
 ## Error Handling
 

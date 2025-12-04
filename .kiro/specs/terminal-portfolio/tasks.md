@@ -88,11 +88,36 @@
     - StatsCommand: Display portfolio statistics
     - _Requirements: 2.5, 1.6, 3.4, 3.5_
 
-  - [ ]\* 3.11 Write property test for command history
+  - [x] 3.11 Implement social media link commands
+    - GithubCommand: Open GitHub profile in new tab
+    - LinkedInCommand: Open LinkedIn profile in new tab
+    - InstagramCommand: Open Instagram profile in new tab (with "insta" alias)
+    - _Requirements: 3A.1, 3A.2, 3A.3_
+
+  - [ ]* 3.12 Write property test for social media commands
+    - **Property 41: Social media link commands**
+    - **Validates: Requirements 3A.1, 3A.2, 3A.3**
+
+  - [x] 3.13 Implement greeting and easter egg commands
+    - HelloCommand: Display "heyyyy! How can i help"
+    - ByeCommand: Display "byeeee"
+    - MakiZeninCommand: Display "heyyyy shorty"
+    - _Requirements: 3A.4, 3A.5, 3A.6_
+
+  - [ ]* 3.14 Write property test for greeting commands
+    - **Property 42: Greeting command responses**
+    - **Validates: Requirements 3A.4, 3A.5, 3A.6_
+
+  - [x] 3.15 Update welcome ASCII art
+    - Replace current ASCII art with hacker-themed ASCII art
+    - Display on terminal initialization
+    - _Requirements: 1.1_
+
+  - [ ]\* 3.16 Write property test for command history
     - **Property 10: Command history completeness**
     - **Validates: Requirements 3.4**
 
-  - [ ]\* 3.12 Write property test for statistics accuracy
+  - [ ]\* 3.17 Write property test for statistics accuracy
     - **Property 11: Statistics accuracy**
     - **Validates: Requirements 3.5**
 
