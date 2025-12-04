@@ -1,0 +1,60 @@
+{
+  "name": "ai-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "type-check": "tsc --noEmit",
+    "verify-deployment": "node scripts/verify-deployment.js",
+    "db:seed": "tsx lib/supabase/seed.ts",
+    "db:test-rls": "tsx lib/supabase/test-rls.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sm-Hassan-Kazmi/ai-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/sm-Hassan-Kazmi/ai-portfolio/issues"
+  },
+  "homepage": "https://github.com/sm-Hassan-Kazmi/ai-portfolio#readme",
+  "dependencies": {
+    "@react-pdf/renderer": "^4.3.1",
+    "@supabase/supabase-js": "^2.86.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.23.25",
+    "lucide-react": "^0.555.0",
+    "next": "^16.0.7",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "resend": "^6.5.2",
+    "swr": "^2.3.7",
+    "tailwind-merge": "^3.4.0",
+    "zod": "^4.1.13",
+    "zustand": "^5.0.9"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.3",
+    "@tailwindcss/postcss": "^4.1.17",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.4.22",
+    "eslint": "^9.39.1",
+    "eslint-config-next": "^16.0.7",
+    "postcss": "^8.5.6",
+    "prettier": "^3.7.4",
+    "tailwindcss": "^4.1.17",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

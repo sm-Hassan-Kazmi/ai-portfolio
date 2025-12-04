@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Terminal theme colors */
+  --color-terminal-bg: #0a0e14;
+  --color-terminal-text: #b3b1ad;
+  --color-terminal-accent: #39bae6;
+  --color-terminal-error: #ff3333;
+  --color-terminal-success: #59c9a5;
+  --color-terminal-prompt: #ffcc66;
+
+  /* Cyberpunk theme colors */
+  --color-cyberpunk-bg: #0d0221;
+  --color-cyberpunk-text: #f72585;
+  --color-cyberpunk-accent: #4cc9f0;
+  --color-cyberpunk-error: #ff006e;
+  --color-cyberpunk-success: #06ffa5;
+
+  /* Matrix theme colors */
+  --color-matrix-bg: #000000;
+  --color-matrix-text: #00ff41;
+  --color-matrix-accent: #008f11;
+  --color-matrix-error: #ff0000;
+  --color-matrix-success: #00ff41;
+
+  /* Dracula theme colors */
+  --color-dracula-bg: #282a36;
+  --color-dracula-text: #f8f8f2;
+  --color-dracula-accent: #bd93f9;
+  --color-dracula-error: #ff5555;
+  --color-dracula-success: #50fa7b;
+
+  /* Animations */
+  --animate-cursor-blink: cursor-blink 1s step-end infinite;
+  --animate-type: type 0.5s steps(40, end);
+}
+
+@keyframes cursor-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+body {
+  background-color: var(--color-terminal-bg);
+  color: var(--color-terminal-text);
+  font-family: var(--font-mono), monospace;
+}
+
+/* Screen reader only utility class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Make sr-only elements visible when focused */
+.focus\:not-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Focus visible styles for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid var(--color-terminal-accent);
+  outline-offset: 2px;
+}
+
+/* Respect prefers-reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  body {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* Improve touch targets on mobile */
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Better text rendering on mobile */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Prevent zoom on input focus on iOS */
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  /* Optimize scrolling on mobile */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+/* Touch-friendly utility class */
+.touch-manipulation {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
