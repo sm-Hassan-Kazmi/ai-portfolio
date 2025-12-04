@@ -104,7 +104,7 @@ export class CertificationsCommand implements Command {
       return {
         title: section.title,
         issuer: metadata.issuer,
-        date: section.startDate || new Date(),
+        date: section.startDate ? new Date(section.startDate) : new Date(),
         credentialId: metadata.credentialId,
         credentialUrl: metadata.credentialUrl,
       };

@@ -108,8 +108,9 @@ Type 'help' to explore more commands!
     let totalMonths = 0;
     portfolioData.experiences?.forEach((exp) => {
       if (exp.startDate) {
-        const end = exp.endDate || new Date();
-        const diffMs = end.getTime() - exp.startDate.getTime();
+        const start = new Date(exp.startDate);
+        const end = exp.endDate ? new Date(exp.endDate) : new Date();
+        const diffMs = end.getTime() - start.getTime();
         const months = Math.floor(diffMs / (1000 * 60 * 60 * 24 * 30.44));
         totalMonths += months;
       }

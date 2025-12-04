@@ -93,6 +93,14 @@ body {
   outline-offset: 2px;
 }
 
+/* Remove focus outline from terminal input */
+#terminal-input:focus,
+#terminal-input:focus-visible {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
 /* Respect prefers-reduced-motion preference */
 @media (prefers-reduced-motion: reduce) {
   *,

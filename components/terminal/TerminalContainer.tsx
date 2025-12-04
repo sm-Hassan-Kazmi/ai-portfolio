@@ -166,7 +166,7 @@ export default function TerminalContainer({
       {/* Terminal Output */}
       <div 
         ref={outputRef} 
-        className="flex-1 overflow-y-auto mb-2 sm:mb-4 space-y-2 text-sm sm:text-base"
+        className="flex-1 overflow-y-auto mb-2 sm:mb-4 space-y-2 text-sm sm:text-base select-text"
         role="log"
         aria-live="polite"
         aria-relevant="additions"
@@ -254,31 +254,37 @@ export default function TerminalContainer({
       </div>
 
       {/* Command Input */}
-      <form onSubmit={handleSubmit} className="flex items-center gap-2" role="search">
+      <form onSubmit={handleSubmit} className="flex items-center gap-2 relative" role="search">
         <span className="text-[var(--color-terminal-accent)] text-sm sm:text-base" aria-hidden="true">❯</span>
-        <label htmlFor="terminal-input" className="sr-only">
-          Terminal command input
-        </label>
-        <input
-          id="terminal-input"
-          ref={inputRef}
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={handleKeyDown}
-          className="flex-1 bg-transparent outline-none border-none text-[var(--color-terminal-text)] caret-transparent text-sm sm:text-base py-2 sm:py-0 min-h-[44px] sm:min-h-0 focus:outline-none focus:border-none focus:ring-0"
-          autoComplete="off"
-          spellCheck={false}
-          aria-label="Terminal command input. Press Tab for autocomplete, Up and Down arrows for command history"
-          aria-describedby="terminal-help"
-        />
-        <span
-          className={`inline-block w-2 h-5 bg-[var(--color-terminal-text)] ${
-            cursorVisible ? "opacity-100" : "opacity-0"
-          }`}
-          style={{ transition: "opacity 0.1s" }}
-          aria-hidden="true"
-        />
+        <div className="flex-1 relative">
+          <label htmlFor="terminal-input" className="sr-only">
+            Terminal command input
+          </label>
+          <input
+            id="terminal-input"
+            ref={inputRef}
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={handleKeyDown}
+            className="w-full bg-transparent outline-none border-none text-[var(--color-terminal-text)] text-sm sm:text-base py-2 sm:py-0 min-h-[44px] sm:min-h-0"
+            style={{ caretColor: 'transparent' }}
+            autoComplete="off"
+            spellCheck={false}
+            aria-label="Terminal command input. Press Tab for autocomplete, Up and Down arrows for command history"
+            aria-describedby="terminal-help"
+          />
+          <span
+            className={`absolute left-0 top-1/2 -translate-y-1/2 inline-block w-2 h-5 bg-[var(--color-terminal-text)] pointer-events-none ${
+              cursorVisible ? "opacity-100" : "opacity-0"
+            }`}
+            style={{ 
+              transition: "opacity 0.1s",
+              marginLeft: `${input.length * 0.6}em`
+            }}
+            aria-hidden="true"
+          />
+        </div>
         <span id="terminal-help" className="sr-only">
           Type 'help' to see available commands. Use Tab for autocomplete. Use Up and Down arrow keys to navigate command history.
         </span>
