@@ -142,7 +142,17 @@ export default function TerminalContainer({
     }
   };
 
-  const handleContainerClick = () => {
+  const handleContainerClick = (e: React.MouseEvent) => {
+    // Don't steal focus if clicking on form elements
+    const target = e.target as HTMLElement;
+    if (
+      target.tagName === 'INPUT' ||
+      target.tagName === 'TEXTAREA' ||
+      target.tagName === 'BUTTON' ||
+      target.closest('form')
+    ) {
+      return;
+    }
     inputRef.current?.focus();
   };
 
@@ -256,7 +266,7 @@ export default function TerminalContainer({
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
-          className="flex-1 bg-transparent outline-none text-[var(--color-terminal-text)] caret-transparent focus:ring-2 focus:ring-[var(--color-terminal-accent)] focus:ring-opacity-50 text-sm sm:text-base py-2 sm:py-0 min-h-[44px] sm:min-h-0"
+          className="flex-1 bg-transparent outline-none text-[var(--color-terminal-text)] caret-transparent text-sm sm:text-base py-2 sm:py-0 min-h-[44px] sm:min-h-0"
           autoComplete="off"
           spellCheck={false}
           aria-label="Terminal command input. Press Tab for autocomplete, Up and Down arrows for command history"
