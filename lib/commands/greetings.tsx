@@ -83,7 +83,7 @@ export class MakiZeninCommand implements Command {
 
          ⚔️  ✨  ⚔️
         ╔═══════════╗
-        ║ MAKI-CHAN ║
+        ║ MAKI-Zenin║
         ╚═══════════╝
          ⚔️  ✨  ⚔️
 
